@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f3ebdd;
+  --paper-deep: #e7d9c3;
+  --foam: #fff9f0;
+  --ink: #1c1710;
+  --ink-soft: #6b6258;
+  --lantern: #e3942c;
+  --flame: #d24a16;
+  --moss: #3f5d49;
+  --wechat: #07c160;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-foam: var(--foam);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-lantern: var(--lantern);
+  --color-flame: var(--flame);
+  --color-moss: var(--moss);
+  --color-wechat: var(--wechat);
+  --font-sans: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei",
+    sans-serif;
+  --font-serif: "Songti SC", "STSong", "Noto Serif SC", "SimSun", Georgia, serif;
+}
+
+html,
+body {
+  min-height: 100%;
+  min-height: 100dvh;
+  background: #241c14;
+  color: var(--ink);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+.paper-bg {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse at 18% -10%, rgba(227, 148, 44, 0.22), transparent 52%),
+    radial-gradient(ellipse at 110% 110%, rgba(63, 93, 73, 0.12), transparent 46%);
+}
+
+.grain::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.09;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+.field {
+  width: 100%;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(28, 23, 16, 0.1);
+  background: rgba(255, 249, 240, 0.78);
+  padding: 0.9rem 1rem;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.4;
+  outline: none;
+}
+
+.field:focus {
+  border-color: var(--lantern);
+  box-shadow: 0 0 0 3px rgba(227, 148, 44, 0.18);
+}
+
+@keyframes flame-breathe {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: translateY(-1.5px) scale(1.06);
+    opacity: 1;
+  }
+}
+
+.flame-breathe {
+  animation: flame-breathe 2.4s ease-in-out infinite;
+  transform-origin: 50% 80%;
+}

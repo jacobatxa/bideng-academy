@@ -1,0 +1,32 @@
+{
+  "students": [
+    {
+      "id": "stu_mw3bgunjjsqj20",
+      "name": "林晚晚",
+      "age": 10,
+      "school": "重庆市巴蜀小学",
+      "grade": "四年级",
+      "favoriteOrganism": "萤火虫",
+      "favoriteTopics": [
+        "宇宙",
+        "画画"
+      ],
+      "parentPhone": "13800138000",
+      "feishuVerified": true,
+      "createdAt": "2026-11-05T09:01:45.391Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord_mw3bha24lat1tf",
+      "orderNo": "BD20261105LQI1AV",
+      "studentId": "stu_mw3bgunjjsqj20",
+      "courseId": "imagine",
+      "amountFen": 198000,
+      "status": "paid",
+      "paymentMethod": "wechat",
+      "createdAt": "2026-11-05T09:02:05.356Z",
+      "paidAt": "2026-11-05T09:03:26.207Z"
+    }
+  ]
+}
